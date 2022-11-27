@@ -138,7 +138,11 @@
 
   .topmargin{
     background-color: #337496;
-    margin-top: 10%;
+    padding: 1rem 2rem;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    margin-top: 15%;
     color: white;
 }
 
