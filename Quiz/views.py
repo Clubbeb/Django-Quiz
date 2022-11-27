@@ -178,4 +178,12 @@ def bars(request):
 def table(request):
   return render(request,"tablero.html")
 
+def a1(request):
+  return render(request,"a1.html")
+def a2(request):
+  return render(request,"a2.html")
+def a3(request):
+  return render(request,"a3.html")
+def a4(request):
+  return render(request,"a4.html")
 

@@ -22,5 +22,10 @@ urlpatterns = [
 	path('p3/', p3, name='p3'),
 	path('p4/', p4, name='p4'),
 	path('bars/', bars, name='bars'),
+ 
+	path('a1/', a1, name='a1'),
+	path('a2/', a2, name='a2'),
+	path('a3/', a3, name='a3'),
+	path('a4/', a4, name='a4'),
 
 ]
