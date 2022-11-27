@@ -8,10 +8,10 @@ from .models import QuizUsuario, Pregunta, PreguntasRespondidas
 
 import matplotlib.pyplot as plt
 
-
 import sqlite3
 
-
+#from .nose import *
+#print(feliz)
 '''''
 def inicio(request):
 
@@ -130,32 +130,50 @@ def logout_vista(request):
 	logout(request)
 	return redirect('/')
 
-
 def bars(request):
-  # mydb = mysql.connector.connect(
-  #    host = "localhost"
-  #    user = "usuario"
-  #    password = "contraseña"
-  #) 
-  # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-  # Data
-  names = 'Triste', 'Enojado', 'Indiferente', 'Triste',
-  size = [12,11,3,30]
-
-  # create a figure and set different background
-  fig = plt.figure()
-  fig.patch.set_facecolor('#337294')
-
-  # Change color of text
-  plt.rcParams['text.color'] = 'white'
-
-  # Create a circle at the center of the plot
-
-  # Pieplot + circle on it
-  plt.pie(size, labels=names)
-  plt.title("Sentimientos Totales")
-  plt.savefig("template/STATIC/grafico.png")
-  return render(request,'charts.html')
+    	
+    feliz = 1
+    triste = 1
+    enojado = 1
+    indiferente = 1
+    x = []
+    con = sqlite3.connect("C:/Users/clubb/OneDrive/Documentos/GitHub/Django-Quiz/db.sqlite3")
+    cur = con.cursor()
+    for row in cur.execute('SELECT * FROM Quiz_quizusuario'):
+        x.append(row[1])
+    con.close()
+    for valor in x:
+        if valor == 10:
+            feliz += 1 
+        elif valor == 5:
+            triste += 1
+        elif valor == 3:
+            enojado += 1
+        elif valor == 0:
+            indiferente += 1
+        elif valor == 15:
+            feliz += 1
+            triste += 1
+        elif valor == 8:
+            triste += 1
+            enojado += 1
+        elif valor == 13:
+            feliz += 1
+            enojado += 1
+        elif valor == 18:
+            feliz +=1
+            triste +=1
+            enojado +=1
+    
+    names = 'Triste', 'Enojado', 'Indiferente', 'Feliz',
+    size = [triste, enojado, indiferente, feliz]
+    fig = plt.figure()
+    fig.patch.set_facecolor('#337294')
+    plt.rcParams['text.color'] = 'white'
+    plt.pie(size, labels=names)
+    plt.title("Sentimientos Totales")
+    plt.savefig("template/STATIC/grafico.png")
+    return render(request,'charts.html')
 
 def table(request):
   return render(request,"tablero.html")
