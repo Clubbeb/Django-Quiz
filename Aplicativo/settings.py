@@ -27,6 +27,7 @@ SECRET_KEY = '^adwke-#3oll)1@5wu-%p=d4%i_6vuo+hg@8(kgvoyubpn(*jc'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+STATICFILES_DIRS = ['./template/static']
 
 
 # Application definition

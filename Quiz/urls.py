@@ -1,18 +1,11 @@
 from django.urls import path
 
-from .views import (
-			inicio, 
-			registro, 
-			loginView, 
-			logout_vista,
-			HomeUsuario, 
-			jugar,
-			resultado_pregunta,
-			tablero)
+from .views import *
 
 urlpatterns = [
 	
-	path('', inicio, name='inicio'),
+	#path('', inicio, name='inicio'),
+	path('', index , name='index'),
 	path('HomeUsuario/', HomeUsuario, name='HomeUsuario'),
 
 
@@ -24,5 +17,9 @@ urlpatterns = [
 	
 	path('jugar/', jugar, name='jugar'),
 	path('resultado/<int:pregunta_respondida_pk>/', resultado_pregunta, name='resultado'),
+ 
+	path('p2/', p2, name='p2'),
+	path('p3/', p3, name='p3'),
+	path('p4/', p4, name='p4'),
 
 ]

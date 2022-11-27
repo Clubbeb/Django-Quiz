@@ -6,7 +6,7 @@ from .forms import RegistroFormulario, UsuarioLoginFormulario
 
 from .models import QuizUsuario, Pregunta, PreguntasRespondidas
 
-
+'''''
 def inicio(request):
 
 	context = {
@@ -16,7 +16,15 @@ def inicio(request):
 	}
 
 	return render(request, 'inicio.html', context)
-
+'''''
+def index(request):
+	return render(request, 'nosotros/p1.html')
+def p2(request):
+	return render(request, 'nosotros/p2.html')
+def p3(request):
+	return render(request, 'nosotros/p3.html')
+def p4(request):
+	return render(request, 'nosotros/p4.html')
 
 def HomeUsuario(request):
 

@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Feel&Share</title>
+        <meta name="description" content="Comparte y sientete mejor">
+        <meta name="author" content="SanOS Development Team">
+        <meta name="keywords" content="sentimientos, sanOS, sanos, SanOS, compartir sentimientos, encontrar amigos">
+        <link rel="stylesheet" href="{% static 't4.css' %}">
+    </head>
+    <body>
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+              <div class="nav-title">
+                Feel&Share
+              </div>
+            </div>
+            <div class="nav-btn">
+              <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+
+            <div class="nav-links">
+              <a href="{% url 'index' %}">Inicio</a>
+              <a href="{% url 'login' %}">Comparte tus sentimientos</a>
+              <a href="https://codepen.io/jo_Geek/">Gráfico</a>
+              <a class="active" href="https://jsfiddle.net/user/jo_Geek/" target="_blank">Ayuda</a>
+            </div>
+          </div>
+        <img class="logo" src="{% static 'logo.png' %}" alt="logo">
+        <img class="mapache" src="{% static 'mapache1.png' %}" alt="mapache">
+        <div class="texto1">
+          <h1>Un sitio especial</h1>
+          <p>Feel&Share es un sitio muy especial en el que podras compartir tus sentimientos y conocerte mejor a ti mismo.</p>
+        </div>
+        <div class="texto2">
+          <h1>Tus sentimientos importan</h1>
+          <p>Sube diaramente tu informe de sentimientos y comparalo con el de los demas.</p>
+        </div>
+        <div class="texto3">
+          <h1>Cuestionarios diarios</h1>
+          <p>Responde un cuestionario que valorara tu estado de animo.</p>
+        </div>
+        <div class="texto4">
+          <h1>Gráficos personales</h1>
+          <p>Revisa tu gráfico semanal que se actualiza diaramente.</p>
+        </div>
+        <div class="texto5">
+          <h1>Personaliza tu experiencia</h1>
+          <p>Lo mas importante es tu comodidad, elige tu favorito entre nuestra gran variedad de temas basados en las estaciones del año</p>
+        </div>
+        <img class="img1" src="{% static 'amigos2.png' %}" alt="chica">
+        <img class="img2" src="{% static 'everyfeeling.png' %}" alt="sentimientos">
+        <img class="img3" src="{% static 'questionnaire.png' %}" alt="cuestionario">
+        <img class="img4" src="{% static 'graph.png' %}" alt="gráficos">
+        <img class="img5" src="{% static 'themes.png' %}" alt="temas">
+        <div class="navbar">
+            <a class="active">Temas :</a>
+            <a href="{% url 'p2' %}">Verano</a>
+            <a href="{% url 'p3' %}">Otoño</a>
+            <a href="{% url 'index' %}">Primavera</a>
+        </div>
+        <div class="botbar1">
+          <p>Feel&Share es una página hecha especialmente para compartir sentimientos de manera anónima. Las descripciones de las funcionalidades principales estan resumidas para un mejor entendimiento. Usa Feel&Share moderadamente y bajo tu propio criterio.</p>
+        </div>
+        <div class="botbar2">
+          <p>Copyright 2022. Todos los derechos reservados.</p>
+        </div>
+        <div class="botbar3">
+          <p>Desarrollado por SanOS Development Team</p>
+        </div>
+    </body>
+</html>
