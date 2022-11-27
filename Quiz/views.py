@@ -8,7 +8,9 @@ from .models import QuizUsuario, Pregunta, PreguntasRespondidas
 
 import matplotlib.pyplot as plt
 
-import mysql.connector
+
+import sqlite3
+
 
 '''''
 def inicio(request):
@@ -128,6 +130,7 @@ def logout_vista(request):
 	logout(request)
 	return redirect('/')
 
+
 def bars(request):
   # mydb = mysql.connector.connect(
   #    host = "localhost"
@@ -156,4 +159,5 @@ def bars(request):
 
 def table(request):
   return render(request,"tablero.html")
+
 
