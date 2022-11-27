@@ -6,6 +6,10 @@ from .forms import RegistroFormulario, UsuarioLoginFormulario
 
 from .models import QuizUsuario, Pregunta, PreguntasRespondidas
 
+import matplotlib.pyplot as plt
+
+import mysql.connector
+
 '''''
 def inicio(request):
 
@@ -123,3 +127,33 @@ def registro(request):
 def logout_vista(request):
 	logout(request)
 	return redirect('/')
+
+def bars(request):
+  # mydb = mysql.connector.connect(
+  #    host = "localhost"
+  #    user = "usuario"
+  #    password = "contraseña"
+  #) 
+  # Pie chart, where the slices will be ordered and plotted counter-clockwise:
+  # Data
+  names = 'Triste', 'Enojado', 'Indiferente', 'Triste',
+  size = [12,11,3,30]
+
+  # create a figure and set different background
+  fig = plt.figure()
+  fig.patch.set_facecolor('#337294')
+
+  # Change color of text
+  plt.rcParams['text.color'] = 'white'
+
+  # Create a circle at the center of the plot
+
+  # Pieplot + circle on it
+  plt.pie(size, labels=names)
+  plt.title("Sentimientos Totales")
+  plt.savefig("template/STATIC/grafico.png")
+  return render(request,'charts.html')
+
+def table(request):
+  return render(request,"tablero.html")
+

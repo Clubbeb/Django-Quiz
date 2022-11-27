@@ -14,19 +14,9 @@
 
 
 	{% if respondida.respuesta.correcta %}
-		<h4 class="text-success">Yeah!! Tu respuesta es correcta</h4>
+		<h4 class="text-success">Gracias por responder :D</h4>
 	{% else %}
-		<h4 class="text-danger">Tu respuesta es incorrecta!!!</h4>
-
-		{% for respuesta in respondida.pregunta.opciones.all %}
-
-			{% if respuesta.correcta %}
-
-				<h4>La respuesta correcta es: <span class="text-success">{{respuesta}}</span></h4>
-				
-			{% endif %}
-
-		{% endfor %}
+		<h4 class="text-danger">Gracias por responder :D</h4>
 
 	{% endif %}
 

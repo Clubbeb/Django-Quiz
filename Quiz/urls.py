@@ -21,5 +21,6 @@ urlpatterns = [
 	path('p2/', p2, name='p2'),
 	path('p3/', p3, name='p3'),
 	path('p4/', p4, name='p4'),
+	path('bars/', bars, name='bars'),
 
 ]
