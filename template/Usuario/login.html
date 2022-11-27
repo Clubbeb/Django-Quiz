@@ -1,13 +1,60 @@
-<form method="POST">
-	{% csrf_token %}
+{% load static %}
+ <!DOCTYPE html>
+ <html>
+       <head>
+              <meta charset="UTF-8">
+              <title>Feel&Share</title>
+              <meta name="description" content="Comparte y sientete mejor">
+              <meta name="author" content="SanOS Development Team">
+              <meta name="keywords" content="sentimientos, sanOS, sanos, SanOS, compartir sentimientos, encontrar amigos">
+              <link rel="stylesheet" href="{% static 'loginfinal.css' %}">   
+       </head>
+       <div class="nav">
+              <input type="checkbox" id="nav-check">
+              <div class="nav-header">
+                <div class="nav-title">
+                  Feel&Share
+                </div>
+              </div>
+              <div class="nav-btn">
+                <label for="nav-check">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </label>
+              </div>
+  
+              <div class="nav-links">
+                <a href="{% url 'index' %}">Inicio</a>
+                <a href="{% url 'login' %}">Comparte tus sentimientos</a>
+                <a href="https://codepen.io/jo_Geek/">Gráfico</a>
+                <a class="active" href="https://jsfiddle.net/user/jo_Geek/" target="_blank">Ayuda</a>
+              </div>
+            </div>
+			<div class="forms">
+				<h1>Inicia Sesión</h1>
+				<form method="POST">
+					{% csrf_token %}
+				
+					{{form.as_p}}
+				
+					<button class="button1" type="submit">
+							Enviar
+					</button>
+				
+					<a type="button" class="btn btn-primary my-4" href="{% url 'registro' %}">Registrarse</a>
 
-	{{form.as_p}}
+				</form>
 
-	<button type="submit">
-			Enviar
-	</button>
-
-	<a type="button" class="btn btn-primary my-4" href="{% url 'registro' %}">Registrarse</a>
-	<a type="button" class="btn btn-primary my-4" href="{% url 'index' %}">Inicio</a>
-
-</form>
+			</div>
+			<div class="botbar1">
+				<p>Feel&Share es una página hecha especialmente para compartir sentimientos de manera anónima. Las descripciones de las funcionalidades principales estan resumidas para un mejor entendimiento. Usa Feel&Share moderadamente y bajo tu propio criterio.</p>
+		 </div>
+		 <div class="botbar2">
+				<p>Copyright 2022. Todos los derechos reservados.</p>
+		 </div>
+		 <div class="botbar3">
+				<p>Desarrollado por SanOS Development Team</p>
+		 </div>
+  
+   </html>
