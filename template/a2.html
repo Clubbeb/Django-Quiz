@@ -6,7 +6,7 @@
         <meta name="description" content="Comparte y sientete mejor">
         <meta name="author" content="SanOS Development Team">
         <meta name="keywords" content="sentimientos, sanOS, sanos, SanOS, compartir sentimientos, encontrar amigos">
-        <link rel="stylesheet" href="ta2.css">
+        <link rel="stylesheet" href="{% static 'ta2.css' %}">
     </head>
     <body>
         <div class="nav">
@@ -25,10 +25,9 @@
             </div>
 
             <div class="nav-links">
-              <a href="p2.html">Inicio</a>
-              <a href="pf2.html">Comparte tus sentimientos</a>
-              <a href="g2.html">Gráfico</a>
-              <a class="active" href="a2.html">Ayuda</a>
+              <a href="{% url 'p2.html' %}">Inicio</a>
+              <a href="{% url 'pf2.html' %}">Comparte tus sentimientos</a>
+              <a href="{% url 'g2.html' %}">Gráfico</a>
             </div>
           </div>
         <div class="text">
