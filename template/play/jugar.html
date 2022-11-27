@@ -1,49 +1,68 @@
 {% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
 
 {% block contenido %}
 
 {% if pregunta is None %}
-
-<div class="container">
-	<div class="jumbotron my-4">
-		<h1>Ya haz respondido a todas nuestras preguntas. Mira el grafico de los usuarios</h1>
-		<a href="{% url 'tablero' %}">Ver Aqui</a>
-		<a href="{% url 'bars' %}">Ver Aqui</a>
-	</div>
+<head>
+	<meta charset="UTF-8">
+	<title>Feel&Share - Ayuda</title>
+	<meta name="description" content="Comparte y sientete mejor">
+	<meta name="author" content="SanOS Development Team">
+	<meta name="keywords" content="sentimientos, sanOS, sanos, SanOS, compartir sentimientos, encontrar amigos">
+	<link rel="stylesheet" href="{% static 'hom.css' %}">
+</head>
+<div class="topmargin">
+    <div class="container">
+        <div class="jumbotron my-4">
+            <h1>Ya haz respondido a todas nuestras preguntas. Mira el grafico de los usuarios</h1>
+            <a href="{% url 'tablero' %}">Ver Aqui</a>
+            <a href="{% url 'bars' %}">Ver Aqui</a>
+        </div>
+    </div>
 </div>
 
 {% else %}
+<head>
+	<meta charset="UTF-8">
+	<title>Feel&Share - Ayuda</title>
+	<meta name="description" content="Comparte y sientete mejor">
+	<meta name="author" content="SanOS Development Team">
+	<meta name="keywords" content="sentimientos, sanOS, sanos, SanOS, compartir sentimientos, encontrar amigos">
+	<link rel="stylesheet" href="{% static 'hom.css' %}">
+</head>
+<div class="topmargin">
+    <div class="container">
 
+        <div class="jumbotron my-4">
 
-<div class="container">
-	
-	<div class="jumbotron my-4">
-		
-		<h3>
-			{{pregunta.texto}}
-		</h3>
+            <h3>
+                {{pregunta.texto}}
+            </h3>
 
-		<form method="POST" class="form">
-			{% csrf_token %}
-			<input type="hidden" name="pregunta_pk" value="{{pregunta.pk}}">
+            <form method="POST" class="form">
+                {% csrf_token %}
+                <input type="hidden" name="pregunta_pk" value="{{pregunta.pk}}">
 
-			{% for opciones in pregunta.opciones.all %}
-				<div class="form-check mx-4">
-				<input class="form-check-input" type="radio" name="respuesta_pk" value="{{opciones.pk}}" id="choice-{{forloop.counter}}">
-				<label class="form-check-label" for="choice-{{forloop.counter}}">
-					{{opciones.texto}}
-				</label>
-				</div>
-			{% endfor %}
+                {% for opciones in pregunta.opciones.all %}
+                    <div class="form-check mx-4">
+                    <input class="form-check-input" type="radio" name="respuesta_pk" value="{{opciones.pk}}" id="choice-{{forloop.counter}}">
+                    <label class="form-check-label" for="choice-{{forloop.counter}}">
+                        {{opciones.texto}}
+                    </label>
+                    </div>
+                {% endfor %}
 
-			<button type="submit" class="btn btn-success">
-				Enviar
-			</button>
+                <button type="submit" class="btn btn-success">
+                    Enviar
+                </button>
 
-		</form>
+            </form>
 
-	</div>
+        </div>
 
+    </div>
 </div>
 
 
