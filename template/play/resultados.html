@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block contenido %}
+<head>
+	<meta charset="UTF-8">
+	<title>Feel&Share - Ayuda</title>
+	<meta name="description" content="Comparte y sientete mejor">
+	<meta name="author" content="SanOS Development Team">
+	<meta name="keywords" content="sentimientos, sanOS, sanos, SanOS, compartir sentimientos, encontrar amigos">
+	<link rel="stylesheet" href="{% static 'kuiz.css' %}">
+</head>
 
 <div class="container">
-	
 	<div class="jumbotron my-4">
 		<h3 class="text-info">{{respondida.pregunta.texto|safe}}</h3>
 		<p>
@@ -16,7 +23,7 @@
 	{% if respondida.respuesta.correcta %}
 		<h4 class="text-success">Gracias por responder :D</h4>
 	{% else %}
-		<h4 class="text-danger">Gracias por responder :D</h4>
+		<h4 class="text-success">Gracias por responder :D</h4>
 
 	{% endif %}
 
