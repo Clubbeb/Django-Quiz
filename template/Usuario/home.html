@@ -25,18 +25,17 @@
         </div>
 
         <div class="nav-links">
-          <a href="{% url 'index' %}">Inicio</a>
-          <a href="{% url 'login' %}">Comparte tus sentimientos</a>
-          <a href="https://codepen.io/jo_Geek/">Gráfico</a>
-          <a class="active" href="https://jsfiddle.net/user/jo_Geek/" target="_blank">Ayuda</a>
         </div>
       </div>
 	<div class="every">
 		<h1>
 			Bienvenido {{user}}
 		</h1>
-		
-		<a type="button" class="btn btn-primary my-4" href="{% url 'jugar' %}">Empezar :D</a>
+    <h2>Responde este breve cuestionario para que compartas tus sentimientos en el grafico global.</h2>
+    <p>Presiona comenzar para seguir con las preguntas</p>
+		<div class="boton">
+		<a type="button" class="btn btn-primary my-4" href="{% url 'jugar' %}">Comenzar</a>
+    </div>
 	</div>
     <div class="botbar1">
         <p>Feel&Share es una página hecha especialmente para compartir sentimientos de manera anónima. Las descripciones de las funcionalidades principales estan resumidas para un mejor entendimiento. Usa Feel&Share moderadamente y bajo tu propio criterio.</p>

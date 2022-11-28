@@ -8,12 +8,26 @@
 	<meta name="description" content="Comparte y sientete mejor">
 	<meta name="author" content="SanOS Development Team">
 	<meta name="keywords" content="sentimientos, sanOS, sanos, SanOS, compartir sentimientos, encontrar amigos">
-	<link rel="stylesheet" href="{% static 'kuiz.css' %}">
+	<link rel="stylesheet" href="{% static 'hom.css' %}">
 </head>
+<div class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+      <div class="nav-title">
+        Feel&Share
+      </div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
 
-<div class="container">
-	<div class="jumbotron my-4">
-		<h3 class="text-info">{{respondida.pregunta.texto|safe}}</h3>
+  </div>
+<div class="box">
+		<h3 style="margin-top: 5%;" class="text-info">{{respondida.pregunta.texto|safe}}</h3>
 		<p>
 			<strong>Tu respuesta:</strong>
 			{{respondida.respuesta.texto|safe}}
@@ -21,20 +35,17 @@
 
 
 	{% if respondida.respuesta.correcta %}
-		<h4 class="text-success">Gracias por responder :D</h4>
+		<h4 class="text-success">Gracias por responder</h4>
 	{% else %}
-		<h4 class="text-success">Gracias por responder :D</h4>
+		<h4 class="text-success">Gracias por responder</h4>
 
 	{% endif %}
 
 	<a href="{% url 'jugar' %}">
-		<button class="btn-success">
+		<button style="margin-bottom: 5%;" class="btn-success">
 			Continuar con la siguiente pregunta
 		</button>
 	</a>
-
-	</div>
-
 
 </div>
 
